@@ -1,19 +1,27 @@
 # 🧅 Onion Network - Anonymous Routing System
 
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)
+![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Security](https://img.shields.io/badge/encryption-RSA%202048%20%2B%20AES%20256-red.svg?style=for-the-badge)
+![Network](https://img.shields.io/badge/network-global-green.svg?style=for-the-badge)
+
+**Developed by:** Aryan
+
 A production-grade Tor-like onion routing implementation in Go, providing multi-layer encryption and anonymous internet access through globally distributed nodes.
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [System Flow](#system-flow)
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Azure Deployment](#azure-deployment)
-- [Testing](#testing)
-- [Security](#security)
-- [Troubleshooting](#troubleshooting)
-- [References](#references)
+- [Overview](#-overview)
+- [Architecture](#️-architecture)
+- [System Flow](#-system-flow)
+- [Prerequisites](#️-prerequisites)
+- [Quick Start](#-quick-start)
+- [Azure Deployment](#️-azure-deployment)
+- [Testing](#-testing)
+- [Security](#-security)
+- [Troubleshooting](#-troubleshooting)
+- [References](#-references)
 
 ## 🎯 Overview
 
