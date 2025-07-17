@@ -13,7 +13,7 @@ A production-grade Tor-like onion routing implementation in Go, providing multi-
 - [Testing](#testing)
 - [Security](#security)
 - [Troubleshooting](#troubleshooting)
-- [Cost Analysis](#cost-analysis)
+- [References](#references)
 
 ## 🎯 Overview
 
@@ -456,13 +456,6 @@ graph TB
     K2 --> K3
 ```
 
-### Limitations
-
-⚠️ **Educational Purpose**: Demonstration network with limited scale  
-⚠️ **Small Network**: Only 3 nodes (production Tor has thousands)  
-⚠️ **No Exit Policies**: All traffic allowed through exit node  
-⚠️ **No Traffic Analysis Resistance**: Basic implementation  
-
 ### Best Practices
 
 - **Monitor Logs**: Watch for unusual activity
@@ -521,29 +514,24 @@ ssh onion@SERVER_IP "iftop"
 ssh onion@SERVER_IP "htop"
 ```
 
-## 💰 Cost Analysis
+## 📚 References
 
-### Azure Monthly Costs
+### Research Papers
 
-| Component | VM Size | Location | Monthly Cost |
-|-----------|---------|----------|--------------|
-| Directory Server | Standard_B1s | East US | $7.30 |
-| Guard Node | Standard_B1s | West Europe | $7.30 |
-| Relay Node | Standard_B1s | Australia East | $7.30 |
-| Exit Node | Standard_B1s | East US | $7.30 |
-| **Total** | | | **$29.20** |
+1. **Dingledine, R., Mathewson, N., & Syverson, P. (2004)**  
+   *Tor: The Second-Generation Onion Router*  
+   USENIX Security Symposium  
+   [Paper Link](https://www.usenix.org/legacy/publications/library/proceedings/sec04/tech/full_papers/dingledine/dingledine.pdf)
 
-### With $100 Azure Student Credit
+2. **Goldschlag, D., Reed, M., & Syverson, P. (1999)**  
+   *Onion Routing for Anonymous and Private Internet Connections*  
+   Communications of the ACM, 42(2), 39-41  
+   [Paper Link](https://www.onion-router.net/Publications/CACM-1999.pdf)
 
-- **Runtime**: ~3.5 months of 24/7 operation
-- **Per Hour**: ~$0.04
-- **Per Day**: ~$0.97
-
-### Cost Optimization
-
-- **Deallocate when not testing**: Save ~90% of costs
-- **Use B1ls instances**: $3.80/month each (-48% cost)
-- **Regional optimization**: Choose cheaper regions
+3. **Syverson, P., Tsudik, G., Reed, M., & Landwehr, C. (2000)**  
+   *Towards an Analysis of Onion Routing Security*  
+   Workshop on Design Issues in Anonymity and Unobservability  
+   [Paper Link](https://www.onion-router.net/Publications/WDIAU-2000.pdf)
 
 ## 📚 Additional Information
 
@@ -603,5 +591,3 @@ az vm deallocate --resource-group onion-network-rg --name exit-node-us
 ```
 
 ---
-
-**Your onion network provides real anonymity through global infrastructure. Use responsibly and in accordance with all applicable laws.** 🧅🌍
