@@ -1,0 +1,58 @@
+./onion-network -mode=node -type=guard -port=8080
+Starting guard node node_q9oNTxOT93hRHqdR on port 8080
+Virtual IP: 🇩🇪 85.123.45.67 (Germany)
+Registered with directory server: 200 OK
+[GUARD] Received 910 bytes of data
+[GUARD node_q9oNTxOT93hRHqdR] Processing encrypted onion packet
+[GUARD node_q9oNTxOT93hRHqdR] 🔓 Successfully decrypted layer, forwarding to relay
+[GUARD node_q9oNTxOT93hRHqdR] Connecting to RELAY at localhost:8081
+[GUARD node_q9oNTxOT93hRHqdR] ✅ Successfully forwarded to RELAY
+Connection closed: EOF
+[GUARD] Received 78 bytes of data
+[GUARD] 🔙 Received response, routing back
+[GUARD node_q9oNTxOT93hRHqdR] 🔙 Sending response to CLIENT
+[GUARD node_q9oNTxOT93hRHqdR] 📡 Delivering response to CLIENT
+[GUARD node_q9oNTxOT93hRHqdR] 📄 Response Preview: HTTP/1.1 200 OK
+Content-Length: 30
+
+{
+  "origin": "24.6.36.228"
+}
+...
+[GUARD node_q9oNTxOT93hRHqdR] ✅ Response delivered to CLIENT!
+
+./onion-network -mode=node -type=relay -port=8081
+Starting relay node node_uTi0O20vbHD8TBct on port 8081
+Virtual IP: 🇯🇵 203.45.78.90 (Japan)
+Registered with directory server: 200 OK
+[RELAY] Received 626 bytes of data
+[RELAY node_uTi0O20vbHD8TBct] Processing encrypted onion packet
+[RELAY node_uTi0O20vbHD8TBct] 🔓 Successfully decrypted layer, forwarding to exit
+[RELAY node_uTi0O20vbHD8TBct] Connecting to EXIT at localhost:8082
+[RELAY node_uTi0O20vbHD8TBct] ✅ Successfully forwarded to EXIT
+Connection closed: EOF
+[RELAY] Received 78 bytes of data
+[RELAY] 🔙 Received response, routing back
+[RELAY node_uTi0O20vbHD8TBct] 🔙 Sending response to GUARD
+[RELAY node_uTi0O20vbHD8TBct] 🔒 Encrypting response for GUARD
+[RELAY node_uTi0O20vbHD8TBct] ✅ Response sent to GUARD
+
+ ./onion-network -mode=node -type=exit -port=8082
+Starting exit node node_fRP6UIVjIKIM4vxR on port 8082
+Virtual IP: 🇺🇸 198.51.100.123 (USA)
+Registered with directory server: 200 OK
+[EXIT] Received 342 bytes of data
+[EXIT node_fRP6UIVjIKIM4vxR] Processing final onion layer
+[EXIT node_fRP6UIVjIKIM4vxR] 🔓 Successfully decrypted final layer - making REAL external request
+[EXIT node_fRP6UIVjIKIM4vxR] 🌐 Making REAL request to: https://httpbin.org/ip
+[EXIT node_fRP6UIVjIKIM4vxR] ✅ SUCCESS! Got 30 bytes from https://httpbin.org/ip
+[EXIT node_fRP6UIVjIKIM4vxR] 📊 Response Status: 200 OK
+[EXIT node_fRP6UIVjIKIM4vxR] 📋 Response Preview: {
+  "origin": "24.6.36.228"
+}
+...
+[EXIT node_fRP6UIVjIKIM4vxR] 🔄 Sending response back through circuit
+[EXIT node_fRP6UIVjIKIM4vxR] 🔙 Sending response to RELAY
+[EXIT node_fRP6UIVjIKIM4vxR] 🔒 Encrypting response for RELAY
+[EXIT node_fRP6UIVjIKIM4vxR] ✅ Response sent to RELAY
+Connection closed: EOF
